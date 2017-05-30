@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"> 
+		<title>Event - Youngeek</title>
+		<link rel="icon" href="img/logo_sqr.png">
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    	<link rel="stylesheet" href="css/general.css">
+
+    	<style> 
+    		h2 {
+    			font-size: 1.5em;
+    		}
+
+    		.panel {
+			    margin-bottom: 1.5vh;
+			    box-shadow: none;
+			    border: none;
+			}
+
+			.panel-heading {
+			    /*background-color: #efefef !important;*/
+			    /*border: none;*/
+			    border-bottom-style: solid; 
+			    border-bottom-width: .01rem;
+			    border-bottom-color: #dedede;
+			}
+
+			.spoiler-trigger {
+			    width: 100%;
+			    height: 100%;
+			    
+			    outline: none;
+			    
+			    background: none;
+			    border: none; 
+			    text-align: left;
+			    color: #00796b
+			}
+    	</style>
+	</head>
+
+	<body>
+		<div w3-include-html="templates/navbar.html"></div>
+
+		<section>
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-3">
+						<img class="img-fluid" src="img/event_example_content.jpg" alt="[img: Event image]">
+					</div> 
+					
+					<div class="col-5"> 
+						<h2>Happy Market</h2>
+						 Happy Market – это проект, позволяющий молодым дизайнерам, мастерам, художникам, стилистам и всем, кто имеет хороший вкус и создает нечто уникальное, представить широкой публике свои работы.
+					</div>
+				</div>
+
+				<hr class="mt-4" width="70%">
+
+				<h2 class="text-center my-4">2 мая 2017 12:00-14:00</h2>
+
+				<div class="row justify-content-center">
+					<div class="col-9"> 
+						<div id="map" style="width: 100%; height: 20rem;"> 
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<div w3-include-html="templates/footer.html"></div>
+
+		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+		<script> 
+            function initMap() {
+                var point = {lat: 55.433334, lng: 37.545649};
+
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 15,
+                    scrollwheel: false,
+                    navigationControl: true,
+                    mapTypeControl: false,
+                    scaleControl: false,
+                    draggable: true,
+                    center: point
+                });
+
+                new google.maps.Marker({
+                    position: point,
+                    map: map
+                });
+            }
+        </script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOTjVgbcCH_QMZFsskcCGAtBhqeVLGbeE&callback=initMap"></script>
+        
+        <script src="https://www.w3schools.com/lib/w3data.js"></script>
+        <script>
+            w3IncludeHTML();
+        </script>
+	</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html> 
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Курсы</title>
+        <link rel="icon" href="img/logo_sqr.png">
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link 
+            rel="stylesheet" 
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" 
+            integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" 
+            crossorigin="anonymous"
+        >
+        
+        <link rel="stylesheet" href="css/general.css">
+        
+        <style>
+            .card-img-top {
+                height: 10rem;
+            }
+        </style> 
+    </head>
+    
+    <body>
+        <div w3-include-html="templates/navbar.html"></div>
+        
+        <section> 
+            <div class="container">
+                <h3 class="mb-4">Детям</h3>
+
+                <div class="row">
+                    <div class="col-3"> 
+                        <div class="card" role="button" onclick="location.href='course_lego.html';">
+                            <img class="card-img-top" src="img/course_lego_process.jpg" alt="[img: LEGO WeDo process]">
+                            <div class="card-block">
+                                <h4 class="card-title">LEGO WeDo</h4>
+                                <h6 class="card-subtitle text-muted">Робототехника</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3"> 
+                        <div class="card" role="button" onclick="location.href='course_bq.html';">
+                            <img class="card-img-top" src="img/course_bq_process.jpg" alt="[img: BQ process]">
+                            <div class="card-block">
+                                <h4 class="card-title">BQ</h4>
+                                <h6 class="card-subtitle text-muted">Робототехника</h6>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-3"> 
+                        <div class="card" role="button" onclick="location.href='course_scratch.html';">
+                            <img class="card-img-top" src="img/course_scratch_process.jpg" alt="[img: Scratch process]">
+                            <div class="card-block">
+                                <h4 class="card-title">Scratch</h4>
+                                <h6 class="card-subtitle text-muted">Создание игр</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3"> 
+                        <div class="card" role="button" onclick="location.href='course_minecraft.html';">
+                            <img class="card-img-top" src="img/course_minecraft_process.jpg" alt="[img: Minecraft process]">
+                            <div class="card-block">
+                                <h4 class="card-title">Minecraft</h4>
+                                <h6 class="card-subtitle text-muted">Программирование</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-100 my-3"></div>
+
+                    <div class="col-3"> 
+                        <div class="card" role="button" onclick="location.href='course_minecraft.html';">
+                            <img class="card-img-top" src="img/course_wix_process.jpg" alt="[img: WIX logo]">
+                            <div class="card-block">
+                                <h4 class="card-title">WIX</h4>
+                                <h6 class="card-subtitle text-muted">Создание сайтов</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="mb-4 mt-5">Взрослым</h3>
+
+                <div class="row">
+                    <div class="col-3"> 
+                        <div class="card" role="button" onclick="location.href='course_arduino.html';">
+                            <img class="card-img-top" src="img/course_arduino_process.jpg" alt="[img: Arduino process]">
+                            <div class="card-block">
+                                <h4 class="card-title">Arduino</h4>
+                                <h6 class="card-subtitle text-muted">Робототехника</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3"> 
+                        <div class="card" role="button" onclick="location.href='course_cpp.html';">
+                            <img class="card-img-top" src="img/course_cpp_process.jpg" alt="[img: CPP process]">
+                            
+                            <div class="card-block">
+                                <h4 class="card-title">С++</h4>
+                                <h6 class="card-subtitle text-muted">Программирование</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3"> 
+                        <div class="card" role="button" onclick="location.href='course_unity.html';">
+                            <div class="card-img-top text-center" style="background-image: url(img/course_unity_process.png); background-size: cover; height: 10rem;">
+                                <!-- /*<img src="img/course_unity.png" class="px-4" style="background-color: white;" alt="[img: Unity logo]" width="40%">*/ -->
+                            </div>
+                            <div class="card-block">
+                                <h4 class="card-title">Unity3D</h4>
+                                <h6 class="card-subtitle text-muted">Создание игр</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        
+        <div w3-include-html="templates/footer.html"></div>
+        
+        <script src="https://www.w3schools.com/lib/w3data.js"></script>
+        <script>
+            w3IncludeHTML();
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html> 
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Вопросы - Youngeek</title>
+        <link rel="icon" href="img/logo_sqr.png">
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+        <link 
+            rel="stylesheet" 
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" 
+            integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" 
+            crossorigin="anonymous"
+        >
+        
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/faq.css">
+    </head>
+    
+    <body>
+        <div w3-include-html="templates/navbar.html"></div>
+        
+        <section>
+<!--            NOTE: Questions pannels appends here (from JS)-->
+        </section>
+        
+        <div w3-include-html="templates/footer.html"></div>
+        
+        <script src="https://www.w3schools.com/lib/w3data.js"></script>
+        <script>
+            w3IncludeHTML();
+        </script>
+    
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+        <script> 
+            var QUESTIONS = {
+                'Как можно записаться на курс?': 'Чтобы записаться на курс, пожалуйста, оставьте заявку в форме',
+                'Cколько стоит курс?': 'С ценами вы можете ознакомиться позвонив по  номеру +7(926)6960683, написав нам в vk или на почту ____.',
+                'Где проходят занятия?': 'Занятия проходят по адресу: г. Подольск, ул. Февральская, 65 (Институт экономики)',
+                'Сколько детей занимается в группах?': 'Сколько детей занимается в группах?',
+                ' Какова продолжительность курсов?': 'Наши курсы рассчитаны от 2 месяцев до целого семестра в зависимости от направления. ',
+                'Когда проходят занятия?': 'Мы подбираем самое оптимальное расписание занятий в зависимости от вашего расписания и занятости преподавателя.',
+                'В каком возрасте можно приходить к вам на курсы?': 'На наших курсах дети могут заниматься с 7 лет.',
+                'Когда стартуют новые группы?': 'Группы стартуют, когда набирается определенное количество желающих.',
+                'Что дети получают после прохождения курса?': `
+                <ul>
+                    <li>Дети выполнят свой собственный проект по данному направлению</li> 
+                    <li>Материалы всех занятий</li>
+                    <li>Диплом об окончании курса</li>
+                </ul>`,
+                'Проходят ли занятия летом?': 'Летом у нас проходят интесивы по разным направлениям и городские образовательные лагеря.',
+                'Что-нибудь нужно приносить с собой?': 'Желательно иметь свой ноутбук, но если его у вас нет, то мы предоставим вам все необходимое для занятий.',
+                'Какова продолжительность занятий?': 'Длительность 1 занятия - 2 академических часа.'
+            };
+            
+            for (var question in QUESTIONS) {
+                $('section').append(`
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <button type="button" class="spoiler-trigger" data-toggle="collapse">
+                            ${question}
+                        </button>
+                    </div>
+                    <div class="panel-collapse collapse out">
+                        <div class="panel-body">
+                            <p>${QUESTIONS[question]}</p>
+                        </div>
+                    </div>
+                </div>`);
+            }
+            
+            $('.spoiler-trigger').click(function() {
+                $(this).parent().next().collapse('toggle');
+            });
+        </script>
+    </body>
+</html>

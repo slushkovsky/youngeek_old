@@ -1,0 +1,191 @@
+<!DOCTYPE html> 
+
+<html style="height: 100%;">
+    <head>
+        <meta charset="utf-8">
+        
+        <title>События - Youngeek</title>
+        <link rel="icon" href="img/logo_sqr.png">
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700">        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="css/general.css">
+
+        <style> 
+        .DocumentList
+        {
+            overflow-x: hidden;
+            overflow-y:hidden;
+            /*height:200px;*/
+            width:100%;
+            padding: 0 15px;
+
+        }
+
+        .DocumentItem {
+            display: inline-block;
+            /*height: 100%;*/
+            white-space: initial;
+            width: 14rem;
+            padding: 0;
+            /*border: 1px solid black;*/
+        }
+
+        .list-inline {
+          white-space:nowrap;
+          height: 100%;
+        }
+
+        .card-img-top {
+            height: 10rem;
+        }
+
+        .col-auto {
+            position: relative;
+            /*min-height: 1rem;*/
+        }
+
+        .roll {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+
+            background-color: transparent;
+            border: none;
+
+            height: 1rem;
+        }
+
+        .roll-left {
+            left: 0;
+        }
+
+        .roll-right {
+            right: 0;
+        }
+        </style>
+    </head>
+    
+    <body style="height: 80%;">
+        <div w3-include-html="templates/navbar.html"></div>
+        
+        <section style="min-height: 90%;"> 
+            <div class="container-fluid">
+                <div class="row no-gutters">
+                    <div class="col-6 pr-4" style="position: relative; border-right-style: solid; border-right-color: #dedede; border-right-width: .1rem;"> 
+                        <button class="roll roll-left" data-for="list-view-passed" data-scroll="-50"><</button>
+
+                        <div class="DocumentList" id="list-view-passed">
+                            <ul class="list-inline">
+                               <!-- NOTE: Events will be appended from JS -->
+                            </ul>
+                        </div>
+
+                        <button class="roll roll-right" data-for="list-view-passed" data-scroll="50">></button>
+                    </div>
+                    <div class="col-6 pl-4"> 
+                        <button class="roll roll-left" data-for="list-view-future" data-scroll="-50"><</button>
+
+                        <div class="DocumentList" id="list-view-future">
+                            <ul class="list-inline">
+                                <!-- NOTE: Events will be appended from JS -->
+                            </ul>
+                        </div>
+
+                        <button class="roll roll-right" data-for="list-view-future" data-scroll="50">></button>
+                    </div> 
+                </div>
+            </div> <!-- .container -->
+        </section>
+
+        <div w3-include-html="templates/footer.html"></div>
+        
+        <script src="https://www.w3schools.com/lib/w3data.js"></script>
+        <script>
+            w3IncludeHTML();
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+        <script>
+            var EVENTS_PASSED = [
+                {
+                    img: 'img/event_example.jpg',
+                    title: 'Пример события',
+                    subtitle: 'Тип события',
+                    descr: 'Небольшое описание каких-то деталей',
+                    url: 'event_example.html'
+                },
+                {
+                    img: 'img/event_example.jpg',
+                    title: 'Пример события',
+                    subtitle: 'Тип события',
+                    descr: 'Небольшое описание каких-то деталей',
+                    url: 'event_example.html'
+                },
+                {
+                    img: 'img/event_example.jpg',
+                    title: 'Пример события',
+                    subtitle: 'Тип события',
+                    descr: 'Небольшое описание каких-то деталей',
+                    url: 'event_example.html'
+                }
+            ];
+
+            var EVENTS_FUTURE = [
+                {
+                    img: 'img/event_example.jpg',
+                    title: 'Пример события',
+                    subtitle: 'Тип события',
+                    descr: 'Небольшое описание каких-то деталей',
+                    url: 'event_example.html'
+                },
+                {
+                    img: 'img/event_example.jpg',
+                    title: 'Пример события',
+                    subtitle: 'Тип события',
+                    descr: 'Небольшое описание каких-то деталей',
+                    url: 'event_example.html'
+                },
+                {
+                    img: 'img/event_example.jpg',
+                    title: 'Пример события',
+                    subtitle: 'Тип события',
+                    descr: 'Небольшое описание каких-то деталей',
+                    url: 'event_example.html'
+                }
+            ];
+
+            function eventCardHTML(img, title, subtitle, descr, url) {
+                return `
+                     <li class="DocumentItem">
+                        <div class="card" role="button" onclick="window.location.href='${url}';"> 
+                            <img class="card-img-top" src="${img}" alt="[img: Event image]">
+                            <div class="card-block">
+                                 <h4 class="card-title">${title}</h4>
+                                <h6 class="card-subtitle mb-2 text-muted">${subtitle}</h6>
+                                <p class="card-text">${descr}</p>
+                            </div>
+                        </div>
+                    </li>
+                `
+            }
+
+            $(function (){
+                for (var i in EVENTS_PASSED) 
+                    $('#list-view-passed ul').append(eventCardHTML(EVENTS_PASSED[i].img, EVENTS_PASSED[i].title, EVENTS_PASSED[i].subtitle, EVENTS_PASSED[i].descr, EVENTS_PASSED[i].url));
+
+                for (var i in EVENTS_FUTURE) 
+                    $('#list-view-future ul').append(eventCardHTML(EVENTS_FUTURE[i].img, EVENTS_FUTURE[i].title, EVENTS_FUTURE[i].subtitle, EVENTS_FUTURE[i].descr, EVENTS_FUTURE[i].url));
+
+                $('.roll').click(function() {
+                    var $scrollView = $('#' + $(this).data('for')); 
+                    $scrollView.scrollLeft($scrollView.scrollLeft() + parseInt($(this).data('scroll'))); 
+                });
+            });
+        </script>
+    </body>
+</html>

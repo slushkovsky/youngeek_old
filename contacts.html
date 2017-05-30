@@ -1,0 +1,108 @@
+<!DOCTYPE html> 
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Контакты</title>
+        <link rel="icon" href="img/logo_sqr.png">
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+            crossorigin="anonymous"
+        ></script>
+        <link 
+            rel="stylesheet"
+            href="https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" 
+        >
+        <link 
+            rel="stylesheet" 
+            href="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/css/tether-theme-basic.min.css" 
+            integrity="sha256-0TQyTp/HqEHx0cA4JnlGzgWqmQaUuRFiZIakmDa6tgg=" 
+            crossorigin="anonymous" 
+        >
+        <script 
+            src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+        ></script>
+        <link 
+            rel="stylesheet" 
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" 
+            integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" 
+            crossorigin="anonymous"
+        >
+        <script 
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" 
+            integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" 
+            crossorigin="anonymous"
+        ></script>
+        <script 
+            src="https://www.w3schools.com/lib/w3data.js"
+        ></script> 
+        
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/contacts.css">
+    </head>
+    
+    <body>
+        <div w3-include-html="templates/navbar.html"></div>
+        
+        <section>
+            <div class="container"> 
+                <div class="row"> 
+                    <div id="map"></div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-6">  
+                        <form>
+                            <input type="text" placeholder="Ваше имя" name="name"> 
+                            <input type="email" placeholder="Email" name="_replyto"> 
+                            <textarea rows="8" style="resize: none;" nam="message"></textarea>
+                            <button 
+                                class="btn btn-primary"
+                                type="submit"
+                            >Отправить</button>
+                        </form>
+                    </div>
+
+                    <div class="col-6" id="contacts">
+                        <i class="material-icons">place</i> г. Подольск, ул. Февральская, д.65 (институт экономики)<br> 
+                        <i class="material-icons">email</i> v.boldyrev16@gmail.com<br> 
+                        <i class="material-icons">local_phone</i> +7 (916) 013-13-46
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div w3-include-html="templates/footer.html"></div>
+        
+        <script> 
+            w3IncludeHTML();
+        </script>
+        
+        <script> 
+            function initMap() {
+                var point = {lat: 55.433334, lng: 37.545649};
+
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 15,
+                    scrollwheel: false,
+                    navigationControl: true,
+                    mapTypeControl: false,
+                    scaleControl: false,
+                    draggable: true,
+                    center: point
+                });
+
+                new google.maps.Marker({
+                    position: point,
+                    map: map
+                });
+            }
+        </script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOTjVgbcCH_QMZFsskcCGAtBhqeVLGbeE&callback=initMap"></script>
+    </body>
+</html>

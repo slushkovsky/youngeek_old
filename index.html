@@ -1,0 +1,158 @@
+<!DOCTYPE html> 
+
+<html> 
+    <head>
+    	<meta charset="utf-8"> 
+        
+    	<title>Youngeek</title> 
+        <link rel="icon" href="img/logo_sqr.png">
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+    	<link rel="stylesheet" href="css/general.css">
+    	<link rel="stylesheet" href="css/index.css">
+    </head>
+    
+    <body>
+        <div w3-include-html="templates/navbar.html"></div>
+        
+        <header> 
+            <h1>Мы учим навыкам будущего</h1>
+        </header>
+
+        <section id="section-benefits">
+            <div class="container">
+                <div class="row justify-content-around"> 
+                    <div class="col text-center">
+                        <img class="img-fluid mb-4" src="img/benefit_tutors.png" width="40%" alt=""><br> 
+                        Преподаватели<br>
+                        <small class="text-muted">Детей обучают студенты и выпускники ведущих технических ВУЗов страны.</small>
+                    </div>
+
+                    <div class="col text-center">
+                        <img class="img-fluid mb-4" src="img/benefit_method.png" width="40%" alt=""><br>
+                        Методика<br>
+                        <small class="text-muted">Для обучения мы используем только самые современные платформы и постоянно работаем над улучшением программы курсов.</small>
+                    </div>
+
+                    <div class="col text-center">
+                        <img class="img-fluid mb-4" src="img/benefit_excursions.png" width="40%" alt=""><br>
+                        Взгляд изнутри<br>
+                        <small class="text-muted">Мы проводим семинары и экскурсии в ведущие IT компаниии страны</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="section-about-us" style="background-color: #fcd581;">
+            <div class="container">
+                <div class="row justify-content-center"> 
+                    <div class="col-5" id="video-container" style="position: relative;"> 	
+                		<!-- <div class="embed-responsive embed-responsive-16by9">
+                    		<iframe src="https://www.youtube.com/embed/9No-FiEInLA" allowfullscreen></iframe> -->
+                            <img src="img/playBtn.png" alt="Btn" class="play-button" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 20%;">
+                            <video loop class="w-100" preload id="video" poster="img/videoPreview.png">
+                                <source src="video/%D0%A8%D0%BA%D0%BE%D0%BB%D0%B0_2.mp4" type="video/mp4"/>
+                                Your browser does not support the video tag.
+                            </video>
+                       
+                    </div>
+
+                    <div class="col-5"> 
+                        <h2>О нас</h2>
+                        <p> 
+                             Youngeek - образовательный проект, главной целью которого является  развитие  мышления, основ программирования и мехатроники у детей и  подростков.Наша задача – научить каждого ребенка страны создавать  свои проекты в  цифровой среде  
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="section-partners" style="background-color: #fcd581; padding-top: 0;">
+            <div class="container"> 
+                <h4 class="text-center mb-4">Наши партнеры</h4>
+
+                <div class="row justify-content-center align-middle">
+                    <div class="col-2 px-4">
+                        <img class="img-fluid" role="button" src="img/partner_bkc.png" onclick="location.href='http://www.bkc.ru/schools/podolsk';">
+                    </div>
+                    <div class="col-2 px-4">
+                        <img class="img-fluid" role="button" src="img/partner_mephi.png" onclick="location.href='https://mephi.ru/';">
+                    </div>
+                    <div class="col-2 px-4">
+                        <img class="img-fluid" role="button" src="img/partner_bmstu.png" onclick="location.href='http://www.bmstu.ru/';">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="section-team" style="background-color: #fff;">
+        	<div class="container"> 
+	            <h2 class="text-center mb-4">Команда</h2>
+
+	            <div class="row justify-content-center"> 
+	            	<div class="col-3 text-center"> 
+	            		<img class="img-fluid rounded-circle px-5 my-3" src="img/people_boldyrev_gray.jpg" alt="[img: Boldyrev photo]"><br>
+	            		Болдырев Владимир<br> 
+	                    <small class="text-muted">Руководитель проекта</small> 
+	            	</div>
+	            	<div class="col-3 text-center"> 
+	            		<img class="img-fluid rounded-circle px-5 my-3" src="img/people_galushkin_gray.jpg" alt="[img: Galushkin photo]"><br>
+	            		Галушкин Семен<br> 
+	                    <small class="text-muted">PR-менеджер</small> 
+	            	</div>
+	            </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section>
+        	<div class="container">
+        		<div class="row justify-content-center"> 
+        			<div class="col-5"> 
+		        		<form>
+		        			<div class="form-group"> 
+		        				<input class="form-control" type="email" name="email" placeholder="Ваш Email">
+		        			</div>
+
+		        			<div class="form-group"> 
+		        				<input class="form-control" type="text" name="phone" placeholder="Ваш номер телефона">
+		        			</div>
+
+		        			<div class="form-group"> 
+		        				<textarea class="form-control" value="comment" style="resize: none;" placeholder="Дополнительная информация"></textarea>
+		        			</div>
+
+                            <button class="btn btn-secondary float-right" type="submit">Отправить</button>
+		        		</form>
+	        		</div>
+        		</div>
+        	</div>
+        </section>
+        
+        <div w3-include-html="templates/footer.html"></div>
+        
+        <script src="https://www.w3schools.com/lib/w3data.js"></script>
+        <script>
+            w3IncludeHTML();
+        </script>
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+ 
+  
+        <script> 
+            $('#video-container').click(function(e) {
+                if ($('#video').get(0).paused) {
+                    $('.play-button').hide();
+                    $('#video').get(0).play();  
+                } else {
+                    $('.play-button').show();
+                    $('#video').get(0).pause();  
+                }
+            });
+        </script>  
+    </body>
+</html> 
