@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"> 
+        <title>Unity3D - Youngeek</title>
+        <link rel="icon" href="img/logo_sqr.png">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/course_item.css"> 
+    </head>
+
+    <body>
+        <div w3-include-html="templates/navbar.html"></div>
+
+        <header style="background-color: #ebebeb; padding-top: 2rem; padding-bottom: 2rem;">
+            <div class="container">
+                <div class="row justify-content-center"> 
+                    <div class="col-3">
+                        <img class="img-thumbnail img-fluid" src="img/course_unity.png" alt="[img: ]"> 
+                    </div>
+                    <div class="col-4">
+                        <h1>Unity3D</h1>
+                        Возраст: 9-13 лет<br> 
+                        Продолжительность: ?<br>
+                        Длительность занятия: ?<br> 
+                        <button class="text-uppercase btn" role="button">записаться</button>
+                    </div>
+                    <div class="col-4">
+                        <i class="material-icons">place</i> г. Подольск, ул. Февральская, д.65<br> 
+                        <i class="material-icons">email</i> v.boldyrev16@gmail.com<br> 
+                        <i class="material-icons">local_phone</i> +7 (916) 013-13-46
+                    </div>
+                </div> 
+            </div> 
+        </header>
+
+        <section>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-5"> 
+                        <h2>О курсе</h2>
+                         Unity 3D — это современный кросс-платформенный движок для разработки 2d и 3d приложений и игр, разработанный Unity Technologies. Приложения, созданные с помощью Unity, работают под различными операционными системами – Windows, OS X, Android, Apple iOS, Linux, а также на игровых приставках Wii, PlayStation 3 и Xbox 360.
+Unity 3D обладает огромным количеством преимуществ, среди которых: возможности импорта, тестирование игры непосредственно в редакторе, кросс-платформенность, инструментарий для совместной разработки, гибкость и масштабируемость, поддержка физики тканей и многое другое. Во время обучения вы изучите основы создания компьютерных игр, познакомитесь с движком Unity3D, 3D моделированием.
+                    </div>
+
+                    <div class="col-5">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe src="https://www.youtube.com/embed/9No-FiEInLA" allowfullscreen></iframe>
+                        </div>
+                    </div> 
+                </div>
+
+                <div class="row justify-content-center" style="padding-top: 3rem;">
+                    <div class="col-5"> 
+                        <h2>Преподаватель</h2>
+
+                        <div class="row pt-3"> 
+                            <div class="col-4"> 
+                                <img class="rounded-circle img-fluid img-thumbnail" src="img/people_strubalina.jpeg" alt="[img: tutor photo]">
+                            </div>
+                            <div class="col">
+                                Струбалина Татьяна<br> 
+                                <small class="text-muted"> 
+                                    Студент МИФИ (Информационная безопасность).<br>
+                                     
+                                </small> 
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-5">
+                        <h2>Программа</h2>
+                        <div class="pt-3" id="course-structure"><!-- NOTE: Events pannels appends here (from JS)--></div>
+                    </div> 
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container"> 
+                <div class="row justify-content-center">
+                    <button class="col-2 text-uppercase btn" role="button">записаться</button>
+                </div>
+            </div> 
+        </section>        
+
+        <div w3-include-html="templates/footer.html"></div>
+
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+        <script> 
+            var EVENTS = {
+                'Знакомство': 'Учеников с интерфейсом Unity, понятие gameObject и представление о компонентах игровых объектов.',
+                'Пользовательский интерфейс': 'Стандартные объекты для создания пользовательского  интерфейса (UI-user interface). Добавление скриптов на игровые объекты.',
+                'Физика в Unity': 'Rigidbody. Скрипт, реализующий движение. Настройка текстур. Простое следование камеры за объектов.',
+                'Настройка фона': 'Skybox материал - настройка фона.Триггеры и их функционал.',
+                'Ассеты': 'Unity Standard Assets, Characters, Vehicles. Переключение между управляемыми объектами.',
+                'Terrain и его инструменты': '',
+                'Проектная деятельность 1 этап': 'Выбор жанра, работа с ассетами, настройка текстуры.',
+                'Проектная деятельность 2 этап': 'Написание скриптов, реализующих управление объектами и следование камеры за объектами. Доработка UI, тестирование игры.',
+            };
+            
+            for (var event in EVENTS) {
+                $('#course-structure').append(`
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <button type="button" class="spoiler-trigger" data-toggle="collapse">
+                            ${event}
+                        </button>
+                    </div>
+                    <div class="panel-collapse collapse out">
+                        <div class="panel-body">
+                            <p>${EVENTS[event]}</p>
+                        </div>
+                    </div>
+                </div>`);
+            }
+            
+            $('.spoiler-trigger').click(function() {
+                $(this).parent().next().collapse('toggle');
+            });
+        </script>
+        
+        <script src="https://www.w3schools.com/lib/w3data.js"></script>
+        <script>
+            w3IncludeHTML();
+        </script>
+    </body>
+</html>

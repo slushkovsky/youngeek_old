@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"> 
+        <title>LEGO WeDO - Youngeek</title>
+        <link rel="icon" href="img/logo_sqr.png">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/course_item.css"> 
+    </head>
+
+    <body>
+        <div w3-include-html="templates/navbar.html"></div>
+
+        <header style="background-color: #ebebeb; padding-top: 2rem; padding-bottom: 2rem;">
+            <div class="container">
+                <div class="row justify-content-center"> 
+                    <div class="col-3">
+                        <img class="img-thumbnail img-fluid" src="img/course_lego_wedo.jpg" alt="[img: Lego WeDo logo]"> 
+                    </div>
+                    <div class="col-4">
+                        <h1>Lego WEDO</h1>
+                        Возраст: 6-10 лет<br> 
+                        Продолжительность: ?<br>
+                        Длительность занятия: ?<br> 
+                        <button class="text-uppercase btn" role="button">записаться</button>
+                    </div>
+                    <div class="col-4">
+                        <i class="material-icons">place</i> г. Подольск, ул. Февральская, д.65<br> 
+                        <i class="material-icons">email</i> v.boldyrev16@gmail.com<br> 
+                        <i class="material-icons">local_phone</i> +7 (916) 013-13-46
+                    </div>
+                </div> 
+            </div> 
+        </header>
+
+        <section>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-5"> 
+                        <h2>О курсе</h2>
+                         Lego WeDo – это образовательный конструкторский набор, который направлен на изучение робототехники с самого раннего возраста. Помимо обычных деталей оригинального набора «Lego», в набор Lego WeDo входят различные приборы, такие как моторы, датчики расстояния и поворота. В комплект также входит программное обеспечение, которое позволяет управлять собранной конструкцией.
+                    </div>
+
+                    <div class="col-5">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe src="https://www.youtube.com/embed/9No-FiEInLA" allowfullscreen></iframe>
+                        </div>
+                    </div> 
+                </div>
+
+                <div class="row justify-content-center" style="padding-top: 3rem;">
+                    <div class="col-5"> 
+                        <h2>Преподаватель</h2>
+
+                        <div class="row pt-3"> 
+                            <div class="col-4"> 
+                                <img class="rounded-circle img-fluid img-thumbnail" src="img/people_suhocheva.jpg" alt="[img: tutor photo]">
+                            </div>
+                            <div class="col">
+                                Сухочева Анна<br> 
+                                <small class="text-muted"> 
+                                    ?
+                                </small> 
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-5 pt-3">
+                        <h2>Программа</h2>
+                        <div id="course-structure"><!-- NOTE: Events pannels appends here (from JS)--></div>
+                    </div> 
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container"> 
+                <div class="row justify-content-center">
+                    <button class="col-2 text-uppercase btn" role="button">записаться</button>
+                </div>
+            <div class="container"> 
+        </section>        
+
+        <div w3-include-html="templates/footer.html"></div>
+
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+        <script> 
+            var EVENTS = {
+                '?': '?',
+            };
+            
+            for (var event in EVENTS) {
+                $('#course-structure').append(`
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <button type="button" class="spoiler-trigger" data-toggle="collapse">
+                            ${event}
+                        </button>
+                    </div>
+                    <div class="panel-collapse collapse out">
+                        <div class="panel-body">
+                            <p>${EVENTS[event]}</p>
+                        </div>
+                    </div>
+                </div>`);
+            }
+            
+            $('.spoiler-trigger').click(function() {
+                $(this).parent().next().collapse('toggle');
+            });
+        </script>
+        
+        <script src="https://www.w3schools.com/lib/w3data.js"></script>
+        <script>
+            w3IncludeHTML();
+        </script>
+    </body>
+</html>

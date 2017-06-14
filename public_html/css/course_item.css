@@ -1,0 +1,33 @@
+h2 {
+    font-size: 1.5em;
+}
+
+.panel {
+    margin-bottom: 1.5vh;
+    box-shadow: none;
+    border: none;
+}
+
+.panel-heading {
+    /*background-color: #efefef !important;*/
+    /*border: none;*/
+    border-bottom-style: solid; 
+    border-bottom-width: .01rem;
+    border-bottom-color: #dedede;
+}
+
+.spoiler-trigger {
+    width: 100%;
+    height: 100%;
+    
+    outline: none;
+    
+    background: none;
+    border: none; 
+    text-align: left;
+    color: #00796b
+}
+
+.spoiler-trigger:focus {
+    outline: none;
+}
